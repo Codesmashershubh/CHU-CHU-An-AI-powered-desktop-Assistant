@@ -28,7 +28,7 @@
 ## AI Assistant
 
 <p align="center">
-<img src="docs/images/chat.png" width="900">
+<img src="" width="900">
 </p>
 
 ## Automation Execution

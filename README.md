@@ -26,7 +26,7 @@
 ## AI Assistant
 
 <p align="center">
-<<<<<<< HEAD
+
 <img src="" width="900">
 =======
 <img src="docs/images/Screenshot 2026-07-14 180112.png" width="900">

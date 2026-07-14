@@ -1,0 +1,33 @@
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--chu-muted);
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.iconButton:hover {
+  background: var(--chu-surface-raised);
+  color: var(--chu-paper);
+}
+
+.iconButton.active {
+  background: var(--chu-brass-soft);
+  color: var(--chu-brass-strong);
+}
+
+.iconButton.danger:hover {
+  background: var(--chu-danger-soft);
+  color: var(--chu-danger);
+}
+
+.iconButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

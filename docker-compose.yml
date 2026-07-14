@@ -1,0 +1,17 @@
+# Optional, for local development only — Render deploys the backend natively
+# (see /render.yaml), this is not used in production.
+#
+# Usage: cp backend/.env.example backend/.env, fill in GROQ_API_KEY, then:
+#   docker compose up --build
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - PORT=8000
+    volumes:
+      - ./backend/data:/app/data

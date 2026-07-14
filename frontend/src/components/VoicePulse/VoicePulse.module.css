@@ -1,0 +1,78 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--chu-border-strong);
+  background: var(--chu-surface-raised);
+  color: var(--chu-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.button:hover:not(:disabled) {
+  color: var(--chu-paper);
+  border-color: var(--chu-border-brass);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.recording {
+  border-color: var(--chu-danger);
+  background: var(--chu-danger-soft);
+  color: var(--chu-danger);
+}
+
+.spin {
+  animation: chu-voice-spin 0.9s linear infinite;
+}
+@keyframes chu-voice-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bars {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 16px;
+}
+.bars span {
+  width: 2.5px;
+  border-radius: var(--radius-full);
+  background: var(--chu-danger);
+  animation: chu-voice-bar 0.9s ease-in-out infinite;
+}
+.bars span:nth-child(1) {
+  animation-delay: 0s;
+  height: 40%;
+}
+.bars span:nth-child(2) {
+  animation-delay: 0.15s;
+  height: 100%;
+}
+.bars span:nth-child(3) {
+  animation-delay: 0.3s;
+  height: 70%;
+}
+.bars span:nth-child(4) {
+  animation-delay: 0.45s;
+  height: 90%;
+}
+
+@keyframes chu-voice-bar {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}

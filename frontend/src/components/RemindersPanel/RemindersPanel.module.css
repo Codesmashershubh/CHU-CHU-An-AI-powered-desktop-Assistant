@@ -1,0 +1,134 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.header {
+  padding: var(--space-4) var(--space-5) var(--space-2);
+}
+.title {
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 var(--space-5) var(--space-4);
+  padding: var(--space-2);
+  background: var(--chu-surface);
+  border: 1px solid var(--chu-border-strong);
+  border-radius: var(--radius-md);
+}
+
+.titleInput {
+  flex: 1;
+  font-size: 13.5px;
+  padding: var(--space-2);
+  color: var(--chu-paper);
+}
+.titleInput::placeholder {
+  color: var(--chu-faint);
+}
+
+.dateInput {
+  font-size: 12px;
+  font-family: var(--font-mono);
+  color: var(--chu-paper-dim);
+  padding: 0 var(--space-2);
+  color-scheme: dark;
+}
+
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+}
+.item:hover {
+  background: var(--chu-surface);
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--chu-border-strong);
+  background: transparent;
+  cursor: pointer;
+}
+.checkbox:hover {
+  border-color: var(--chu-brass);
+  background: var(--chu-brass-soft);
+}
+
+.checkboxDone {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--chu-signal-soft);
+  color: var(--chu-signal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.itemTitle {
+  font-size: 13.5px;
+  color: var(--chu-paper);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.itemDue {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--chu-muted);
+}
+.overdue {
+  color: var(--chu-danger);
+}
+
+.itemDone .itemTitle {
+  color: var(--chu-faint);
+  text-decoration: line-through;
+}
+
+.completedSection {
+  margin-top: var(--space-5);
+}
+.completedLabel {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--chu-faint);
+  margin-bottom: var(--space-2);
+  padding: 0 var(--space-3);
+}

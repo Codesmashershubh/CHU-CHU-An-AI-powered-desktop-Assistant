@@ -1,0 +1,104 @@
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  background: var(--chu-ink-raised);
+  border-right: 1px solid var(--chu-border);
+  padding: var(--space-3);
+  gap: var(--space-4);
+  transition: width var(--duration-base) var(--ease-out), min-width var(--duration-base) var(--ease-out);
+}
+
+.sidebar.collapsed {
+  width: 64px;
+  min-width: 64px;
+}
+
+.paletteButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 36px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--chu-border-strong);
+  background: var(--chu-surface);
+  color: var(--chu-muted);
+  cursor: pointer;
+  font-size: 12.5px;
+  transition: border-color var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+}
+.paletteButton:hover {
+  border-color: var(--chu-border-brass);
+  background: var(--chu-surface-raised);
+  color: var(--chu-paper-dim);
+}
+.kbd {
+  margin-left: auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 38px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--chu-muted);
+  cursor: pointer;
+  font-size: 13.5px;
+  text-align: left;
+  transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
+}
+
+.navItem:hover {
+  background: var(--chu-surface-raised);
+  color: var(--chu-paper-dim);
+}
+
+.navItem.active {
+  background: var(--chu-brass-soft);
+  color: var(--chu-brass-strong);
+}
+
+.navIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.navLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--radius-full);
+  background: var(--chu-signal-soft);
+  color: var(--chu-signal);
+  font-size: 10.5px;
+  font-family: var(--font-mono);
+}
+
+.footer {
+  border-top: 1px solid var(--chu-border);
+  padding-top: var(--space-2);
+}

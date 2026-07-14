@@ -1,0 +1,49 @@
+appId: com.chuchu.assistant
+productName: Chu Chu
+copyright: "Copyright © Chu Chu"
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - "!electron/**/*.md"
+  - package.json
+
+extraMetadata:
+  main: electron/main.js
+
+mac:
+  category: public.app-category.productivity
+  icon: build/icon.png
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  # macOS .icns is best generated on a Mac (`iconutil`) or via an online
+  # converter fed with build/icon.png — see frontend/README.md. electron-builder
+  # will fall back to build/icon.png if build/icon.icns isn't present.
+
+win:
+  icon: build/icon.ico
+  target:
+    - target: nsis
+      arch: [x64]
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+
+linux:
+  icon: build/icon.png
+  category: Utility
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+
+publish: null

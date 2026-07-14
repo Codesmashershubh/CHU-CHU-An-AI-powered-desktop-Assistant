@@ -1,0 +1,69 @@
+{
+  "$comment": "Canonical, human-readable mirror of backend/app/services/automation_intents.py. This is the source of truth for WHAT each skill does and its safety classification; the backend's Python file is the source of truth for validation logic, and frontend/electron/automation/actions.ts is the source of truth for execution. Render deploys `backend/` as an isolated root directory, so these three can't share a build-time import — see docs/ARCHITECTURE.md ('plugins/ holds...') for why that's a deliberate trade-off. Keep all three in sync when you add a skill.",
+
+  "skills": [
+    {
+      "action": "open_app",
+      "description": "Launch an application already installed on the user's computer.",
+      "params": { "name": "application name, e.g. 'notepad', 'calculator', 'terminal'" },
+      "requires_confirmation": true,
+      "executor": "frontend/electron/automation/actions.ts#openApp"
+    },
+    {
+      "action": "open_url",
+      "description": "Open a URL in the user's default web browser.",
+      "params": { "url": "a full URL, e.g. 'https://example.com'" },
+      "requires_confirmation": true,
+      "executor": "frontend/electron/automation/actions.ts#openUrl"
+    },
+    {
+      "action": "create_note",
+      "description": "Save a note into Chu Chu's Notes panel.",
+      "params": { "title": "short title", "content": "the note body" },
+      "requires_confirmation": false,
+      "executor": "backend REST call — POST /api/notes (no local OS action needed)"
+    },
+    {
+      "action": "set_reminder",
+      "description": "Create a reminder in Chu Chu's Reminders panel.",
+      "params": { "title": "what to be reminded of", "due_at": "ISO-8601 datetime" },
+      "requires_confirmation": false,
+      "executor": "backend REST call — POST /api/reminders (no local OS action needed)"
+    },
+    {
+      "action": "search_web",
+      "description": "Run a web search and summarize the results.",
+      "params": { "query": "search query" },
+      "requires_confirmation": false,
+      "executor": "backend REST call — GET /api/browser/search (no local OS action needed)"
+    },
+    {
+      "action": "take_screenshot",
+      "description": "Capture the user's screen and save it to their Chu Chu workspace folder.",
+      "params": {},
+      "requires_confirmation": true,
+      "executor": "frontend/electron/automation/actions.ts#takeScreenshot"
+    },
+    {
+      "action": "get_system_info",
+      "description": "Read basic, non-sensitive system info (OS, battery, memory headroom).",
+      "params": {},
+      "requires_confirmation": false,
+      "executor": "frontend/electron/automation/actions.ts#getSystemInfo"
+    },
+    {
+      "action": "copy_to_clipboard",
+      "description": "Copy text to the user's clipboard.",
+      "params": { "text": "text to copy" },
+      "requires_confirmation": true,
+      "executor": "frontend/electron/automation/actions.ts#copyToClipboard"
+    },
+    {
+      "action": "open_workspace",
+      "description": "Open Chu Chu's local workspace folder (notes, screenshots) in the file explorer.",
+      "params": {},
+      "requires_confirmation": false,
+      "executor": "frontend/electron/automation/actions.ts#openWorkspace"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+.userRow {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--space-2);
+}
+
+.userCard {
+  max-width: 72%;
+  background: var(--chu-surface-raised);
+  border: 1px solid var(--chu-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.assistantRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0 var(--space-2);
+}
+
+.assistantHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.assistantName {
+  font-family: var(--font-display);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--chu-brass-strong);
+}
+
+.timestamp {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--chu-faint);
+}
+
+.providerTag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--chu-faint);
+  border: 1px solid var(--chu-border);
+  border-radius: var(--radius-full);
+  padding: 1px 6px;
+  margin-left: auto;
+}
+
+.assistantContent {
+  padding-left: 22px;
+  border-left: 2px solid var(--chu-border);
+}
+
+.text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--chu-paper);
+  line-height: 1.65;
+}
+
+.thinking {
+  color: var(--chu-muted);
+  font-style: italic;
+}
+
+.error {
+  color: var(--chu-danger);
+  font-size: 13px;
+  margin-top: var(--space-1);
+}

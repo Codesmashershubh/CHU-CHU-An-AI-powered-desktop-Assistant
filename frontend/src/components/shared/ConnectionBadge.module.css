@@ -1,0 +1,40 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--chu-border);
+  color: var(--chu-muted);
+}
+
+.muted {
+  color: var(--chu-muted);
+}
+.brass {
+  color: var(--chu-brass-strong);
+  border-color: var(--chu-border-brass);
+}
+.signal {
+  color: var(--chu-signal);
+  border-color: rgba(94, 201, 192, 0.3);
+}
+.danger {
+  color: var(--chu-danger);
+  border-color: rgba(224, 113, 90, 0.3);
+}
+
+.spin {
+  animation: chu-spin 0.9s linear infinite;
+}
+
+@keyframes chu-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

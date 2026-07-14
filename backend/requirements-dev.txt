@@ -1,0 +1,6 @@
+# Dev/test-only — deliberately NOT installed on Render. Keeping these out of
+# requirements.txt means the deployed instance never pays their RAM/disk cost.
+-r requirements.txt
+pytest==8.3.4
+pytest-asyncio==0.25.1
+ruff==0.8.6

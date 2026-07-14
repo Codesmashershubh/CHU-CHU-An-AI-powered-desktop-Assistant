@@ -1,0 +1,113 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 10, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 14vh;
+  z-index: 100;
+  animation: chu-overlay-in var(--duration-fast) var(--ease-out);
+}
+
+@keyframes chu-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.palette {
+  width: 100%;
+  max-width: 560px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--chu-surface);
+  border: 1px solid var(--chu-border-brass);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-float), var(--glow-brass);
+  overflow: hidden;
+  animation: chu-palette-in var(--duration-base) var(--ease-out);
+}
+
+@keyframes chu-palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--chu-border);
+  flex-shrink: 0;
+}
+
+.searchIcon {
+  color: var(--chu-brass-strong);
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1;
+  font-size: 14px;
+  color: var(--chu-paper);
+}
+.input::placeholder {
+  color: var(--chu-faint);
+}
+
+.escHint {
+  flex-shrink: 0;
+}
+
+.list {
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.empty {
+  padding: var(--space-5);
+  text-align: center;
+  color: var(--chu-muted);
+  font-size: 13px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  height: 38px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--chu-paper-dim);
+  font-size: 13.5px;
+  text-align: left;
+  cursor: pointer;
+}
+.item svg {
+  color: var(--chu-muted);
+  flex-shrink: 0;
+}
+
+.itemActive {
+  background: var(--chu-brass-soft);
+  color: var(--chu-paper);
+}
+.itemActive svg {
+  color: var(--chu-brass-strong);
+}

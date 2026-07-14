@@ -1,0 +1,91 @@
+/*
+  Chu Chu design tokens — see docs/DESIGN.md for the full rationale.
+
+  Direction: a "precision instrument panel," not another purple-gradient AI
+  chat window. Graphite base, warm brass as the primary accent (identity,
+  primary actions), a muted signal-teal for live/active state (voice,
+  connection status) — deliberately two restrained, warm-leaning accents
+  rather than one bright neon one. Space Grotesk carries the brand mark;
+  IBM Plex Sans/Mono carry the working UI (chosen as a pair because IBM
+  designed Plex specifically for technical interfaces, and Mono earns its
+  keep here for shortcuts, timestamps, and command-palette input).
+
+  Google Fonts is a progressive enhancement — every family below has a solid
+  system-font fallback, so a blocked or slow font request never breaks the UI.
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  /* --- Color: surfaces -------------------------------------------------- */
+  --chu-ink: #0d1013;
+  --chu-ink-raised: #12161b;
+  --chu-surface: #161a1f;
+  --chu-surface-raised: #1f252c;
+  --chu-surface-hover: #262d35;
+
+  /* --- Color: accents ----------------------------------------------------- */
+  --chu-brass: #d5a253;
+  --chu-brass-soft: #d5a25326;
+  --chu-brass-strong: #e8b869;
+  --chu-signal: #5ec9c0;
+  --chu-signal-soft: #5ec9c026;
+  --chu-danger: #e0715a;
+  --chu-danger-soft: #e0715a22;
+
+  /* --- Color: text ------------------------------------------------------------- */
+  --chu-paper: #edeae3;
+  --chu-paper-dim: #c7c3ba;
+  --chu-muted: #8b9198;
+  --chu-faint: #565c63;
+
+  /* --- Color: borders -------------------------------------------------------------- */
+  --chu-border: rgba(237, 234, 227, 0.08);
+  --chu-border-strong: rgba(237, 234, 227, 0.15);
+  --chu-border-brass: rgba(213, 162, 83, 0.35);
+
+  /* --- Typography ------------------------------------------------------------------ */
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", "Cascadia Code", Consolas, monospace;
+
+  /* --- Spacing scale (4px base) ------------------------------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+
+  /* --- Radius: restrained, "instrument panel" rather than soft SaaS pill --------------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 999px;
+
+  /* --- Elevation: hairline borders + soft glow rather than heavy drop-shadow ------------ */
+  --shadow-panel: 0 1px 0 rgba(255, 255, 255, 0.02) inset, 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-float: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --glow-brass: 0 0 0 1px var(--chu-border-brass), 0 0 24px rgba(213, 162, 83, 0.18);
+  --glow-signal: 0 0 0 1px rgba(94, 201, 192, 0.35), 0 0 20px rgba(94, 201, 192, 0.16);
+
+  /* --- Motion ----------------------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+
+  /* --- Titlebar (frameless window) ------------------------------------------------------- */
+  --titlebar-height: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+  }
+}

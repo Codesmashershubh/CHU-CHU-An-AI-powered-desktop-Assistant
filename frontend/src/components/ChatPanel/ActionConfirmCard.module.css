@@ -1,0 +1,67 @@
+.card {
+  margin-left: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--chu-border-brass);
+  background: var(--chu-brass-soft);
+  box-shadow: var(--glow-brass);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  color: var(--chu-paper);
+}
+.header svg {
+  color: var(--chu-brass-strong);
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.decline,
+.approve {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.decline {
+  background: transparent;
+  color: var(--chu-muted);
+  border-color: var(--chu-border-strong);
+}
+.decline:hover:not(:disabled) {
+  color: var(--chu-paper);
+}
+
+.approve {
+  background: var(--chu-brass);
+  color: #16110a;
+}
+.approve:hover:not(:disabled) {
+  background: var(--chu-brass-strong);
+}
+
+.decline:disabled,
+.approve:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

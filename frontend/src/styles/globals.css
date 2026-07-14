@@ -1,0 +1,121 @@
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--chu-paper);
+  background: var(--chu-ink);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden; /* the app shell owns scrolling per-panel, not the window */
+  user-select: none; /* an app chrome, not a document — re-enabled explicitly for text content */
+}
+
+/* Chat text, notes, and anything the user reads/copies should still be selectable. */
+.chu-selectable,
+.chu-selectable * {
+  user-select: text;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+a {
+  color: var(--chu-brass-strong);
+}
+
+code,
+kbd,
+.chu-mono {
+  font-family: var(--font-mono);
+}
+
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  font-size: 11px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--chu-border-strong);
+  background: var(--chu-surface-raised);
+  color: var(--chu-paper-dim);
+}
+
+::selection {
+  background: var(--chu-brass-soft);
+  color: var(--chu-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--chu-signal);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Scrollbars — thin, styled to match the panel rather than default browser chrome */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--chu-surface-hover) transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--chu-surface-hover);
+  border-radius: var(--radius-full);
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--chu-border-strong);
+}
+
+/* This region is dragged to move the frameless window; interactive children
+   must opt back out with -webkit-app-region: no-drag (see TitleBar). */
+.chu-drag-region {
+  -webkit-app-region: drag;
+}
+.chu-no-drag {
+  -webkit-app-region: no-drag;
+}
